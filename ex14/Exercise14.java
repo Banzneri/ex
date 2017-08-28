@@ -21,7 +21,7 @@ public class Exercise14 {
         }
 
         int origin = Math.abs(largestNegative);
-        int width = origin + 1 + largestPositive;
+        int width = origin + largestPositive + 1;
 
         for(int y = 0; y < height; y++) {
             System.out.println();
@@ -37,5 +37,6 @@ public class Exercise14 {
                 }
             }
         }
+        System.out.println();
     }
 }
