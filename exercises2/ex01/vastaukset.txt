@@ -10,3 +10,10 @@ muuttuu myös origo2 arvot
 4. this viittaa luokan ilmentymään eli olioon.
 
 5. finalize() metodia kutsutaan kun roskienkeruu käynnistyy
+
+6. p1-oliota ei tuhota, koska p2-olio viittaa siihen yhä.
+
+7. Koska Pisteen attribuutteja kutsutaan Sovellus-luokassa, ja
+ne ovatkin nyt privateja, jolloin Sovellus ei saa kutsuttua niitä
+
+9. Jos olio yritetään luoda ilman parametreja, se ei onnistu.
