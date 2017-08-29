@@ -1,0 +1,12 @@
+1. Koska x ja y attribuutteja ei ole vielä alustettu, ne ovat default
+default arvoltaan 0.
+
+2. Piste@15db9742. Tuloste on obj.toString() metodin palauttama
+merkkijonokuvaus oliosta. Alussa on olion luokan nimi, ja @-merkin
+jälkeinen teksti on olion hash code heksadesimaalina. Origo2-Tuloste
+on sama kuin aiemman origo-olion tuloste. Kun origon arvot muutetaan,
+muuttuu myös origo2 arvot
+
+4. this viittaa luokan ilmentymään eli olioon.
+
+5. finalize() metodia kutsutaan kun roskienkeruu käynnistyy
