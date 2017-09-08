@@ -7,8 +7,8 @@ public class Sovellus {
     public static void main(String[] args) {
         testaaEqualsMetodi();
         testaaColorLuokka();
-        //tulostaArrayPisteet(kysy5Koordinaattia());
-        //tulostaLinkedListColor(kysyVareja());
+        tulostaArrayPisteet(kysy5Koordinaattia());
+        tulostaLinkedListColor(kysyVareja());
         testaaMystring();
         kaynnistaRoskienKeruu();
     }

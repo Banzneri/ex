@@ -21,13 +21,14 @@ public class Exercise19 {
 
             long startTime = System.nanoTime();
 
-            for(int i = 0; i < numbers.length; i++) {
+            loop :for(int i = 0; i < numbers.length; i++) {
                 if(numbers[i] == value) {
                     long finishedTime = System.nanoTime();
                     long timeDifference = finishedTime - startTime;
                     double elapsedTime = timeDifference / 1e6;
                     System.out.println("Arvo löytyy indeksistä " + i + 
                                        "\n Aikaa kului " + elapsedTime + " millisekuntia");
+                    break loop;
                 }
             }
         } catch(Exception e) {
