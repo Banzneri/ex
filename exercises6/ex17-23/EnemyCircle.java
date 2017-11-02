@@ -19,21 +19,42 @@ public class EnemyCircle extends MyCircle {
         velocityChangeStartTime = System.nanoTime();
     }
 
+    /**
+     * Moves the circle
+     * 
+     * Sets the x and y attributes according velocityX and velocityY.
+     * Calls the handleVelocityChange() method.
+     */
     public void move() {
         setX(getX() + getVelocityX());
         setY(getY() + getVelocityY());
 
+        handleVelocityChange();
+    }
+
+    /**
+     * Handles the random movement of the circle
+     * 
+     * Checks if its time change velocity, and if so,
+     * calls changeVelocityXY() method, resets the
+     * timer
+     * 
+     */
+    public void handleVelocityChange() {
         velocityChangeCounter = System.nanoTime() - velocityChangeStartTime;
         if((double) velocityChangeCounter / 1000000000.0 > velocityChangeInterval) {
-            changeVelocity();
+            changeVelocityXY();
             velocityChangeCounter = 0;
             velocityChangeInterval = MyUtils.getRandom(1, 5);
             velocityChangeStartTime = System.nanoTime();
         }
-        
     }
 
-    public void changeVelocity() {
+    /**
+     * Randomizs the velocityX and velocityY attributes,
+     * changing the direction and speed of the circle
+     */
+    public void changeVelocityXY() {
         setVelocityX(MyUtils.getRandom(-5, 5));
         setVelocityY(MyUtils.getRandom(-5, 5));
     }

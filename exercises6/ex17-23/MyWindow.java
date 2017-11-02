@@ -2,30 +2,41 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
 
-public class MyWindow extends JFrame implements ActionListener {
-    private JButton button;
-    private JButton button2;
+public class MyWindow extends JFrame {
+    private JTextField nameField;
     private MyDrawingAreaComponent drawingArea;
+    private ScoreArea scoreArea;
+    private JButton scoreButton;
 
     public MyWindow() {
-        button = new JButton("Start game");
-        button2 = new JButton("Cancel");
-        drawingArea = new MyDrawingAreaComponent();
+        nameField = new JTextField("MyName", 10);
+        drawingArea = new MyDrawingAreaComponent(this);
+        scoreArea = new ScoreArea();
+        scoreButton = new JButton("Highscore");
 
-        button.addActionListener(this);
-        button2.addActionListener(this);
-        drawingArea.addMouseMotionListener(new MyMouseListener(drawingArea));
-
-        add(button, BorderLayout.PAGE_START);
-        add(button2, BorderLayout.PAGE_END);
+        scoreButton.addActionListener(e -> showScore());
+        nameField.addActionListener(e -> startGame());
+        
+        add(nameField, BorderLayout.NORTH);
         add(drawingArea, BorderLayout.CENTER);
+        add(scoreArea, BorderLayout.SOUTH);
     }
 
-    public void actionPerformed(ActionEvent e) {
-        if(e.getSource().equals(button)) {
-            drawingArea.startGame();
-        } else if(e.getSource().equals(button2)) {
-            System.out.println("Cancel");
-        }
+    public void startGame() {
+        nameField.setVisible(false);
+        drawingArea.setVisible(true);
+        drawingArea.startGame(nameField.getText());
+    }
+
+    public void endGame() {
+        MyWindow window = new MyWindow();
+        window.setTitle("MyTitle");
+        window.setSize(500, 500);
+        window.setVisible(true);
+        this.dispose();
+    }
+
+    public void showScore() {
+        
     }
 }

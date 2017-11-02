@@ -1,0 +1,10 @@
+10 000 000 TestObjects
+
+Add:            array: 2 431,895066 ms
+                linked: 3 141,500518 ms 
+
+Get (index):    Array: 0,005921 ms
+                Linked: 36,766707 ms
+                
+Remove (index): Array: 6,667842 ms
+                Linked: 0,916454 ms
